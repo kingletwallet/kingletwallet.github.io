@@ -44,12 +44,12 @@
 
     <details>
       <summary>What do I need to use Kinglet?</summary>
-      <p>An iPhone with iOS 26 or later, an air-gapped signer that signs with unified sighash (<code>0x21</code>) over animated QR codes (UR), and your own Electrum server for Bitcoin XBT, such as Fulcrum or electrs. You can try the demo wallet without any of them.</p>
+      <p>An iPhone with iOS 26 or later, an air-gapped signer that signs with unified sighash (<code>0x21</code>) over animated QR codes (UR or BBQr), and your own Electrum server for Bitcoin XBT, such as Fulcrum or electrs. You can try the demo wallet without any of them.</p>
     </details>
 
     <details>
       <summary>Which signers work?</summary>
-      <p>Air-gapped signers that sign with unified sighash (<code>0x21</code>) and exchange transactions as animated QR codes (UR). SeedSigner with unified sighash support is tested end to end. Kinglet reads signed transactions as UR only, not BBQr, files or USB. Check that the signer shows "Unified sighash (0x21)" before you approve.</p>
+      <p>Air-gapped signers that sign with unified sighash (<code>0x21</code>) and exchange transactions as animated QR codes (UR or BBQr). Tested end to end with SeedSigner and Coldcard Q, both running the unofficial XBT firmware from privkeyio. Official firmware does not sign <code>0x21</code>. Coldcard Q signs segwit and legacy wallets, not taproot. Kinglet reads signed transactions through the camera only, not from files, USB or NFC. Check that the signer shows "Unified sighash (0x21)" before you approve.</p>
     </details>
 
     <details>

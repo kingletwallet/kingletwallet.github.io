@@ -1,7 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 10 80 80">
-<circle cx="50" cy="50" r="37" fill="#6F7A45"/>
+<defs>
+<linearGradient id="dBg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#22251D"/>
+<stop offset="1" stop-color="#060607"/>
+</linearGradient>
+<radialGradient id="dCoin" cx="0.36" cy="0.28" r="0.85">
+<stop offset="0" stop-color="#97A65A"/>
+<stop offset="0.55" stop-color="#5F6B36"/>
+<stop offset="1" stop-color="#2F361B"/>
+</radialGradient>
+<linearGradient id="dSlot" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#1A1D15"/>
+<stop offset="1" stop-color="#050505"/>
+</linearGradient>
+<linearGradient id="dCrest" x1="0.2" y1="0" x2="0.8" y2="1">
+<stop offset="0" stop-color="#FFC56B"/>
+<stop offset="0.45" stop-color="#F7931A"/>
+<stop offset="1" stop-color="#D0650A"/>
+</linearGradient>
+<linearGradient id="dShine" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.32"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="dRim" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.08"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0.35"/>
+</linearGradient>
+<filter id="dShadow" x="-30%" y="-30%" width="160%" height="160%">
+<feGaussianBlur stdDeviation="3.2"/>
+</filter>
+<filter id="dSoft" x="-30%" y="-30%" width="160%" height="160%">
+<feGaussianBlur stdDeviation="1.2"/>
+</filter>
+<filter id="dBlur" x="-30%" y="-60%" width="160%" height="220%">
+<feGaussianBlur stdDeviation="2.4"/>
+</filter>
+<clipPath id="dCrestClip"><path d="M50 23 C36 38 36 62 50 77 C64 62 64 38 50 23Z"/></clipPath>
+<linearGradient id="dEdge" gradientUnits="userSpaceOnUse" x1="38" y1="25" x2="62" y2="76">
+<stop offset="0" stop-color="#FFF6E2" stop-opacity="0.5"/>
+<stop offset="0.45" stop-color="#FFF6E2" stop-opacity="0.16"/>
+<stop offset="1" stop-color="#FFF6E2" stop-opacity="0.03"/>
+</linearGradient>
+<clipPath id="dClip"><circle cx="50" cy="50" r="37"/></clipPath>
+</defs>
+<circle cx="50" cy="50" r="37" fill="url(#dCoin)"/>
+<g clip-path="url(#dClip)">
 <g transform="rotate(14 50 50)">
-<path d="M50 13 C28 32 28 68 50 87 C72 68 72 32 50 13Z" fill="#0B0B0C"/>
-<path d="M50 23 C36 38 36 62 50 77 C64 62 64 38 50 23Z" fill="#F7931A"/>
+<path d="M50 13 C28 32 28 68 50 87 C72 68 72 32 50 13Z" fill="url(#dSlot)"/>
+<path d="M50 23 C36 38 36 62 50 77 C64 62 64 38 50 23Z" fill="url(#dCrest)"/>
+<g clip-path="url(#dCrestClip)">
+<path d="M50 23 C36 38 36 62 50 77 C64 62 64 38 50 23Z" fill="none" stroke="url(#dEdge)" stroke-width="4" filter="url(#dSoft)"/>
+</g>
+</g>
+<ellipse cx="45" cy="25" rx="24" ry="11" fill="url(#dShine)" filter="url(#dBlur)"/>
+<ellipse cx="36" cy="30" rx="5" ry="2.6" transform="rotate(-35 36 30)" fill="#FFFFFF" opacity="0.35" filter="url(#dSoft)"/>
 </g>
 </svg>

@@ -124,22 +124,17 @@ main { padding-top: var(--header); }
   align-items: center;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(30, 22, 15, 0.55);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 14px;
-  color: var(--muted);
+.hero-title {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 800;
+  margin: 0 0 24px;
 }
-.eyebrow b { color: var(--text); font-weight: 600; }
 
 h1, h2, h3 { letter-spacing: -0.025em; line-height: 1.08; margin: 0; }
 
-.hero h1 { font-size: clamp(44px, 6.2vw, 76px); font-weight: 800; margin: 24px 0 22px; }
+.hero .claim { font-size: clamp(36px, 4.6vw, 56px); font-weight: 800; margin: 0 0 22px; }
 
 .grad {
   background: var(--grad);
@@ -242,15 +237,16 @@ section[id] { scroll-margin-top: var(--header); }
   flex-direction: column;
 }
 .step-num {
-  width: 34px;
-  height: 34px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-weight: 700;
-  font-size: 15px;
-  color: #111;
-  background: var(--orange);
+  font-weight: 800;
+  font-size: 20px;
+  color: #1a1206;
+  background: radial-gradient(circle at 34% 28%, #ffd28a 0%, var(--orange) 48%, #c45f08 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 24px rgba(247, 147, 26, 0.35);
 }
 .step h3 { font-size: 22px; margin: 18px 0 10px; letter-spacing: -0.01em; }
 .step p { color: var(--muted); margin: 0 0 28px; font-size: 16px; }
@@ -284,21 +280,14 @@ section[id] { scroll-margin-top: var(--header); }
   --glow: radial-gradient(800px 520px at 5% 55%, rgba(111, 122, 69, 0.14), rgba(111, 122, 69, 0) 72%);
 }
 
-.needs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.needs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .need { display: flex; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .need .icon-box { width: 52px; height: 52px; border-radius: 14px; flex: none; margin: 0; }
 .need .icon-box svg { width: 24px; height: 24px; }
 .need h3 { font-size: 18px; margin-bottom: 6px; letter-spacing: -0.01em; }
 .need p { margin: 0; color: var(--muted); font-size: 16px; }
 
-.callout {
-  margin-top: 18px;
-  border: 1px solid rgba(247, 147, 26, 0.35);
-  background: rgba(247, 147, 26, 0.06);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  font-weight: 600;
-}
+.note { margin: 28px 0 0; color: var(--muted); font-size: 16px; }
 
 /* CTA */
 

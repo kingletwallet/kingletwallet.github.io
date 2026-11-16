@@ -156,16 +156,58 @@ h1, h2, h3 { letter-spacing: -0.025em; line-height: 1.08; margin: 0; }
 .phones .p2 { left: 34%; top: 0; z-index: 2; transform: rotate(4deg); }
 .phones .p3 { left: 62%; top: 110px; transform: rotate(12deg); opacity: 0.92; }
 
-/* Flat phone used in the step cards */
+/* Phone frame: polished titanium rim, black bezel, Dynamic Island and side buttons */
 
 .phone {
+  --metal: conic-gradient(from 210deg, #3a3a3f, #d4d4da 8%, #5d5d63 16%, #26262a 30%, #74747a 45%, #ececf0 52%, #6a6a70 60%, #222226 75%, #a3a3a9 88%, #3a3a3f);
   position: relative;
-  border-radius: 42px;
-  padding: 9px;
-  background: linear-gradient(160deg, #4a4a50, #141416 40%, #222226);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  container-type: inline-size;
+  border-radius: 47px;
+  padding: 4px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0.15)),
+    var(--metal);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.5);
 }
-.phone img { display: block; width: 100%; height: auto; border-radius: 34px; background: #000; }
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 7px solid #050505;
+  border-radius: 43px;
+  background: #000;
+}
+.phone::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(11px + 2.6cqw);
+  width: 30cqw;
+  height: 8.6cqw;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle at 78% 50%, #1d2333 0 1.6cqw, #000 1.9cqw);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+.phone::before {
+  --btn-l: linear-gradient(90deg, #a3a3a9, #45454a);
+  --btn-r: linear-gradient(270deg, #a3a3a9, #45454a);
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 38cqw;
+  height: 44cqw;
+  pointer-events: none;
+  background:
+    var(--btn-l) left 0 top 4cqw / 3px 6cqw no-repeat,
+    var(--btn-l) left 0 top 14cqw / 3px 12cqw no-repeat,
+    var(--btn-l) left 0 top 30cqw / 3px 12cqw no-repeat,
+    var(--btn-r) right 0 top 16cqw / 3px 18cqw no-repeat;
+}
 
 /* Sections */
 
@@ -254,13 +296,19 @@ section[id] { scroll-margin-top: var(--header); }
   width: 72%;
   max-width: 250px;
   height: 380px;
-  overflow: hidden;
   margin: auto auto 0;
   padding-bottom: 0;
-  border-radius: 36px 36px 0 0;
-  box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.28);
 }
-.step .phone img { border-radius: 28px 28px 0 0; }
+.step .phone img {
+  /* Crop the screenshot itself so the frame never clips its side buttons */
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 0;
+  border-radius: 37px 37px 0 0;
+}
 
 /* Cards */
 

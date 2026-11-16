@@ -295,7 +295,9 @@ section[id] { scroll-margin-top: var(--header); }
 .step .phone {
   width: 72%;
   max-width: 250px;
-  height: 380px;
+  /* Ratio, not a fixed height, so a narrow frame never crops the sides */
+  aspect-ratio: 5 / 9;
+  min-height: 0;
   margin: auto auto 0;
   padding-bottom: 0;
   border-radius: 40px 40px 0 0;
@@ -411,7 +413,7 @@ details p { margin: 12px 0 0; }
   .phones { height: 520px; max-width: 560px; width: 100%; margin: 0 auto; }
   .phones .phone { width: 210px; }
   .steps, .cards, .cards-2 { grid-template-columns: 1fr; }
-  .step .phone { width: 60%; }
+  .step .phone { width: 82%; max-width: 320px; aspect-ratio: 4 / 5; }
   .tiles { grid-template-columns: 1fr; gap: 56px; margin-top: 64px; }
   .needs { grid-template-columns: 1fr; }
 }
